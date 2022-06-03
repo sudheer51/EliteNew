@@ -21,6 +21,7 @@ public class ScheduleAppointmentTests {
 		login("ria1","Ria12345");
 		navigationToAModule("Schedule Appointment");
 		bookAppointment("Charlie");
+		System.out.println("Book Appointment is successfull");
 		 
 		 
 		 
