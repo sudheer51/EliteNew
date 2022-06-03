@@ -1,0 +1,26 @@
+Maven: Build Automation tool [Gradle,Ant]
+
+Package format : war,jar,ear
+
+jar:
+
+	1. Download the jxl file - dependencies
+	2. 	java: import java.util.*;
+			import jxl.Workbook;
+		
+	3.	compile  
+		
+		4. Test
+
+		4. Build and package	-> mvn install
+
+	plugins: 
+	dependencies: 
+	import the existing project:
+	export the exsiting project
+	artifact ID
+	groupID
+	version
+	Build format
+
+Debugging in eclipse
