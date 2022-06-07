@@ -21,7 +21,7 @@ public class ScheduleAppointmentTests {
 		login("ria1","Ria12345");
 		navigationToAModule("Schedule Appointment");
 		bookAppointment("Charlie");
-		System.out.println("Book Appointment is successfully updated in the home page");
+        System.out.println("Book Appointment is successfully updated in the home page in the mmp");
 		System.out.println("TC Pass    ");
 		 
 		 
