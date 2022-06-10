@@ -22,6 +22,7 @@ public class ScheduleAppointmentTests {
 		navigationToAModule("Schedule Appointment");
 		bookAppointment("Charlie");
 		System.out.println("Book Appointment is successfully updated in the home page in the mmp");
+		System.out.println("TC execution completed successfully");
 	}
 	public void bookAppointment(String doctorName)
 	{
