@@ -22,9 +22,6 @@ public class ScheduleAppointmentTests {
 		navigationToAModule("Schedule Appointment");
 		bookAppointment("Charlie");
 		System.out.println("Book Appointment is successfully updated in the home page in the mmp");
-		 
-		 
-		 
 	}
 	public void bookAppointment(String doctorName)
 	{
@@ -33,21 +30,6 @@ public class ScheduleAppointmentTests {
 		
 		driver.switchTo().frame("myframe");
 		driver.findElement(By.id("datepicker")).sendKeys("07/01/2022");
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
 		
 		
 	}
