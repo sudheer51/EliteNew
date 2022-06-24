@@ -1,4 +1,4 @@
-package org.iit.mmp.patiendmodule.tests;
+package org.iit.mmp.patientmodule.tests;
 import org.iit.mmp.patientmodule.pages.ScheduleAppointmentPage;
 import org.iit.mmp.util.HelperClass;
 import org.iit.mmp.util.TestBaseClass;

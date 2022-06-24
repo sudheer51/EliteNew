@@ -21,5 +21,9 @@ public class HelperClass {
 				driver.findElement(By.id("password")).sendKeys(pword);
 				driver.findElement(By.cssSelector("input[value='Sign In']")).click();
 	}
+	public void launchBrowser(String url)
+	{
+		driver.get(url);
+	}
 	 
 }
