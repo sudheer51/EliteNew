@@ -16,7 +16,7 @@ public class ViewMessagesPage {
 		boolean result = false;
 		String actualReason=driver.findElement(By.xpath("//table[@class='table']/tbody/tr[2]/td[2]")).getText().trim();
 		String actualSubject=driver.findElement(By.xpath("//table[@class='table']/tbody/tr[3]/td[2]")).getText().trim();
-		String actualPatientName=driver.findElement(By.xpath("//table[@class='table']/tbody/tr[1]/td[2]")).getText().trim();
+		String actualPatientName=driver.findElement(By.xpath("//table[@class='table']/tbody/tr[2]/td[1]")).getText().trim();
 		
 		if((actualReason.equals(expectedReason))&&(expectedSubject.equals(actualSubject))&&(actualPatientName.equals(expectedPatientName)))
 		{
