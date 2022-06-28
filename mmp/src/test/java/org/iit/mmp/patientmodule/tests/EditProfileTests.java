@@ -23,6 +23,44 @@ public class EditProfileTests extends TestBaseClass{
 	}
 }
 /**
+Edit Profile:
+
+			String expectedValue="Newyork";
+
+			Click on Edit
+
+			Fill the expectedValue for the City
+			
+			Click on Save
+
+			String actualValue=Fetch the value
+
+
+			Compare both
+
+
+3 Fields to update and check
+
+
+1. Check each and every single field : 3  methods
+2. Edit all :
+			call 3 methods in line number 1
+3. Any one:1
+			call any one of the 3 methods
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 1. Check each and every single field : 3  methods
 2. Edit all :
