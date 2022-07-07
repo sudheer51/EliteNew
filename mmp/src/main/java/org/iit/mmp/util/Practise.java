@@ -2,6 +2,9 @@ package org.iit.mmp.util;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.Random;
+
+import jdk.internal.misc.FileSystemOption;
 
 public class Practise {
 	
@@ -11,11 +14,15 @@ public class Practise {
 //		System.out.println(dateArray[0]);
 //		System.out.println(dateArray[1]);
 //		System.out.println(dateArray[2]);
+//		
+//		Calendar cal = Calendar.getInstance();
+//		cal.add(Calendar.DAY_OF_MONTH, 50);
+//		SimpleDateFormat sdf = new SimpleDateFormat("dd/MMMM/yyyy");
+//		System.out.println(sdf.format(cal.getTime()));
 		
-		Calendar cal = Calendar.getInstance();
-		cal.add(Calendar.DAY_OF_MONTH, 50);
-		SimpleDateFormat sdf = new SimpleDateFormat("dd/MMMM/yyyy");
-		System.out.println(sdf.format(cal.getTime()));
+		Random rand = new Random();
+		char ch = (char)(65+rand.nextInt(26));
+		System.out.println(ch);
 	}
 
 }

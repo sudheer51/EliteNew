@@ -27,14 +27,12 @@ public class TestBaseClass {
 		{
 			WebDriverManager.chromedriver().setup();
 			driver = new ChromeDriver();
-			driver.get(pro.getProperty("patienturl"));
 			driver.manage().window().maximize();
 		}
 		else if(browserType.equals("edge"))
 		{
 			WebDriverManager.edgedriver().setup();
 			driver = new EdgeDriver();
-			driver.get(pro.getProperty("patienturl"));
 			driver.manage().window().maximize();
 		}
 

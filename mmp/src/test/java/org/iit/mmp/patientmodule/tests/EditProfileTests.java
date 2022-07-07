@@ -9,15 +9,43 @@ import org.testng.annotations.Test;
 public class EditProfileTests extends TestBaseClass{
 
 	
-	@Test(description="Validate of Edit Profile for a single field : City")
+	@Test(description="Validate of Edit Profile for a single field : City",priority=2)
 	public void validateEditCity()
 	{
 		 
 		HelperClass helper = new HelperClass(driver);
+		helper.launchBrowser(pro.getProperty("patienturl"));
 		helper.login(pro.getProperty("patientusername"),pro.getProperty("patientpassword"));
 		helper.navigationToAModule("Profile");
 		UpdateProfilePage profilePage = new UpdateProfilePage(driver);
-		boolean result = profilePage.editCity();
+		boolean result = profilePage.editSingleField();
+		Assert.assertTrue(result);
+		 
+	}
+	
+	@Test(description="Validate All Fields : State & City",priority=1)
+	public void validateEditAllFields()
+	{
+		 
+		HelperClass helper = new HelperClass(driver);
+		helper.launchBrowser(pro.getProperty("patienturl"));
+		helper.login(pro.getProperty("patientusername"),pro.getProperty("patientpassword"));
+		helper.navigationToAModule("Profile");
+		UpdateProfilePage profilePage = new UpdateProfilePage(driver);
+		boolean result = profilePage.editAllFields();
+		Assert.assertTrue(result);
+		 
+	}
+	@Test(description="Validate Random Fields : State & City",priority=3)
+	public void validateRandomFields()
+	{
+		 
+		HelperClass helper = new HelperClass(driver);
+		helper.launchBrowser(pro.getProperty("patienturl"));
+		helper.login(pro.getProperty("patientusername"),pro.getProperty("patientpassword"));
+		helper.navigationToAModule("Profile");
+		UpdateProfilePage profilePage = new UpdateProfilePage(driver);
+		boolean result = profilePage.editRandomFields();
 		Assert.assertTrue(result);
 		 
 	}
