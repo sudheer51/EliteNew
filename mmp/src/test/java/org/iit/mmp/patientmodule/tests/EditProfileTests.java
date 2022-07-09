@@ -18,7 +18,7 @@ public class EditProfileTests extends TestBaseClass{
 		helper.login(pro.getProperty("patientusername"),pro.getProperty("patientpassword"));
 		helper.navigationToAModule("Profile");
 		UpdateProfilePage profilePage = new UpdateProfilePage(driver);
-		boolean result = profilePage.editSingleField();
+		boolean result = profilePage.validateEditCityField();
 		Assert.assertTrue(result);
 		 
 	}

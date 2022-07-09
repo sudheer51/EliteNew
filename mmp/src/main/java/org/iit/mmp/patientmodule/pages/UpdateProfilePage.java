@@ -15,7 +15,7 @@ public class UpdateProfilePage {
 	{
 		this.driver = driver;
 	}
-	public boolean editSingleField()
+	public boolean validateEditCityField()
 	{
 		Random rand = new Random();
 		String expectedValue="QAAUTCITY"+ (char)(65+rand.nextInt(26));
@@ -27,6 +27,20 @@ public class UpdateProfilePage {
 		alrt.accept();
 		String actualValue=driver.findElement(By.id("city")).getAttribute("value");
 		return expectedValue.equals(actualValue);
+	}
+	public boolean validateEditStateField()
+	{
+		Random rand = new Random();
+		String expectedState="QAAUTState"+ (char)(65+rand.nextInt(26));
+		driver.findElement(By.id("Ebtn")).click();
+		driver.findElement(By.id("state")).clear();
+		driver.findElement(By.id("state")).sendKeys(expectedState);	
+		driver.findElement(By.id("Sbtn")).click();
+		Alert alrt = driver.switchTo().alert();
+		alrt.accept();
+		String actualState=driver.findElement(By.id("state")).getAttribute("value");
+		return expectedState.equals(actualState);
+		
 	}
 	public void editState()
 	{
@@ -79,22 +93,21 @@ public class UpdateProfilePage {
 	{
 		Random rand = new Random();
 		int i = 1+rand.nextInt(2);
-		
+		boolean result = false;
 		switch(i)
 		{
 			case 1:
-				clickEditButton();
-				editCity();
+				 
+				result = validateEditCityField();
 				System.out.println("city");
 				break;
 			case 2:
-				clickEditButton();
-				editState();
+				 
+				result = validateEditStateField();
 				System.out.println("state");
 				break;
 		}
-		submitData();
-		fetchAllData();
-		return actualhMap.equals(expectedhMap);
+	
+		return result;
 	}
 }

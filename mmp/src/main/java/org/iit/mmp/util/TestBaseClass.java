@@ -1,6 +1,7 @@
 package org.iit.mmp.util;
 
 import java.io.IOException;
+import java.time.Duration;
 import java.util.Properties;
 
 import org.openqa.selenium.WebDriver;
@@ -23,10 +24,12 @@ public class TestBaseClass {
 		ProjectConfiguration pConfig = new ProjectConfiguration();
 		pro=pConfig.loadProperties();
 		String browserType = pro.getProperty("browserType");
+		Duration d =Duration.ofSeconds(30);
 		if(browserType.equals("chrome"))
 		{
 			WebDriverManager.chromedriver().setup();
 			driver = new ChromeDriver();
+			driver.manage().timeouts().implicitlyWait(d);
 			driver.manage().window().maximize();
 		}
 		else if(browserType.equals("edge"))

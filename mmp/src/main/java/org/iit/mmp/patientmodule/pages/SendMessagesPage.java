@@ -21,5 +21,6 @@ public class SendMessagesPage {
 		alrt.accept();
 		return actualMsg;
 	}
+	
 
 }
