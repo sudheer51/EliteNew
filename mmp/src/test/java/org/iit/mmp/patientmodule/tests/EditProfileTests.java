@@ -23,7 +23,7 @@ public class EditProfileTests extends TestBaseClass{
 		 
 	}
 	
-	@Test(description="Validate All Fields : State & City",priority=1)
+	@Test(description="Validate All Fields : State & City",priority=1,enabled=false)
 	public void validateEditAllFields()
 	{
 		 
@@ -36,7 +36,7 @@ public class EditProfileTests extends TestBaseClass{
 		Assert.assertTrue(result);
 		 
 	}
-	@Test(description="Validate Random Fields : State & City",priority=3)
+	@Test(description="Validate Random Fields : State & City",priority=3,enabled=false)
 	public void validateRandomFields()
 	{
 		 

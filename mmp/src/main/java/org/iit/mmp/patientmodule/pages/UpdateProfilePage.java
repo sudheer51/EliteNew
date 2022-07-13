@@ -1,28 +1,49 @@
 package org.iit.mmp.patientmodule.pages;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Random;
 
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindAll;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.How;
+import org.openqa.selenium.support.PageFactory;
 
 public class UpdateProfilePage {
 	WebDriver driver;
 	HashMap<String,String> expectedhMap = new HashMap<String,String>();
 	HashMap<String,String> actualhMap = new HashMap<String,String>();	
+	 
+	
+	@FindBy(how = How.ID, using = "Ebtn") 
+	WebElement editButton;
+	
+	@FindBy(how = How.ID, using = "city") 
+	WebElement cityTxtBox;
+	
+	@FindBy(how = How.ID, using = "Sbtn") 
+	WebElement submitButton;
+	
+	@FindAll(@FindBy(how = How.XPATH, using = "Sbtn") )
+	List<WebElement> sbtnList;
+	
 	public UpdateProfilePage(WebDriver driver)
 	{
 		this.driver = driver;
+		PageFactory.initElements(driver,this);
 	}
 	public boolean validateEditCityField()
 	{
 		Random rand = new Random();
 		String expectedValue="QAAUTCITY"+ (char)(65+rand.nextInt(26));
-		driver.findElement(By.id("Ebtn")).click();
-		driver.findElement(By.id("city")).clear();
-		driver.findElement(By.id("city")).sendKeys(expectedValue);
-		driver.findElement(By.id("Sbtn")).click();
+		editButton.click();
+		cityTxtBox.clear();
+		cityTxtBox.sendKeys(expectedValue);
+		submitButton.click();
 		Alert alrt = driver.switchTo().alert();
 		alrt.accept();
 		String actualValue=driver.findElement(By.id("city")).getAttribute("value");
@@ -32,7 +53,7 @@ public class UpdateProfilePage {
 	{
 		Random rand = new Random();
 		String expectedState="QAAUTState"+ (char)(65+rand.nextInt(26));
-		driver.findElement(By.id("Ebtn")).click();
+		editButton.click();
 		driver.findElement(By.id("state")).clear();
 		driver.findElement(By.id("state")).sendKeys(expectedState);	
 		driver.findElement(By.id("Sbtn")).click();
